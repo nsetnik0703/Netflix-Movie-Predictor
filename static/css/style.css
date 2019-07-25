@@ -1,0 +1,226 @@
+html * {
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 17px;
+  letter-spacing: -.7px;
+  word-spacing: .4px;
+  color: #000000;
+  font-weight: 400;
+  text-decoration: none solid rgb(68, 68, 68);
+  font-style: normal;
+  font-variant: normal;
+  text-transform: none;
+}
+
+.selector {
+  background-image: linear-gradient(white, black);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+
+  width: 100px;
+  height: 100px;
+}
+
+body {
+  padding-top: 65px;
+    margin: 0;
+    background: #D0E4F5 url("https://images4.alphacoders.com/888/888105.jpg") 
+    no-repeat center center fixed;
+    background-size: cover;
+   }
+  
+  #map,
+  body,
+  html, header {
+    height: 100%;
+  }
+
+  p, h4, h6, small {
+    font-family: 'Poppins', sans-serif;
+    letter-spacing: 0px;
+  }
+  
+  .Button {
+    color: rgb(224, 192, 104); 
+    font-size: 25px; 
+    line-height: 25px; padding: 8px; border-radius: 10px; font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%); box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; border: 2px solid rgb(28, 110, 164); display: inline-block;}
+    .Button:hover {
+    background: #1C6EA4; }
+    .Button:active {
+    background: #144E75; }
+
+  .navbar {
+    background-color: #144E75;
+    background: #1C6EA4;
+    background: -moz-linear-gradient(left, #1C6EA4 0%, #000000 100%);
+    background: -webkit-linear-gradient(left, #1C6EA4 0%, #000000 100%);
+    background: linear-gradient(to right, #1C6EA4 0%, #000000 100%);
+  }
+
+ #color1 {
+    background-color: #144E75;
+}
+#color2 {
+  background-color: #FFEC8B;
+}
+#color3 {
+  background-color: #72A0C1;
+}
+#color4 {
+  background-color: #000000;
+}
+#timestamp {
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 17px;
+  letter-spacing: 0px;
+  word-spacing: 0.2px;
+  color: lightgray;
+  font-weight: 700;
+  font-variant: normal;
+  text-transform: none;
+  text-align: center;
+}
+    .card-body {
+        background-image: url("https://images4.alphacoders.com/888/888105.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        transition: 1s ease-out;
+    }
+      .card-body:hover{
+        background-image: url("https://yt3.ggpht.com/a/AGF-l79StRyDW9A-TohGZhSpmio2pwh8zQX-d5HNOQ=s900-mo-c-c0xffffffff-rj-k-no");
+        
+      }
+
+    .card-title {
+      font-size:30px;
+      color: rgb(255, 255, 255);
+    }
+      .card-title:hover{
+        color: rgb(158, 166, 238);
+      }
+
+    .card-text {
+      color: rgb(211, 229, 241);
+    }
+      .card-text:hover {
+        color: rgb(124, 124, 124);
+      }
+
+#linePlot{
+        background-image: url("https://images4.alphacoders.com/888/888105.jpg");
+        background-size: cover;
+        background-position: center;
+        background-attachment: fixed;
+        transition: 1s ease-out;
+}
+
+#footnote{
+  font-family: "Lucida Console", Monaco, monospace;
+  font-size: 16px;
+  letter-spacing: 0px;
+  word-spacing: 0.2px;
+  color: lightgray;
+  font-weight: 700;
+  font-style: italic;
+  font-variant: normal;
+  text-transform: none;
+  transition: .1s;
+}
+  #footnote:hover{
+    color: #72A0C1;
+    font-size: 17px;
+    text-decoration-color: #144E75;
+  }
+
+.HOLDER {
+   background: black;
+}
+
+.fab {
+  color: rgb(255, 255, 255);
+  font-size: 28px;
+  transition: transform 0.2s;
+}
+
+.fab:hover {
+  transform: scale(1.2);
+}
+
+.fa-bars {
+  color: #ffffff;
+}
+
+.footer-link:hover {
+  text-decoration: none !important;
+}
+
+.history-link {
+  font-family: 'Poppins', sans-serif;
+  font-size: 16px;
+  color: #144E75;
+}
+
+.history-link:hover {
+  text-decoration: none !important;
+  color: #72A0C1;
+}
+.footer-text {
+  display: inline-block;
+  color: #ffffff;
+  font-size: 16px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.nav-link {
+  color: #ffffff !important;
+  padding-top: 5px;
+  padding-bottom: 2px;
+}
+
+.nav-link:hover {
+  color: #72A0C1 !important;
+}
+
+.navbar-toggler-icon {
+  color: white !important;
+}
+
+.navbar-brand {
+  color: #ffffff;
+
+}
+
+.navbar-brand:hover {
+  color: #72A0C1 !important;
+}
+
+#ETH-price,
+#EOS-price,
+#BCC-price,
+#BNB-price,
+#LTC-price,
+#XRP-price {
+  color: rgb(198, 219, 233);
+  font-size: 20pt;
+  transition: .1s;
+}
+
+#ETH-price:hover,
+#EOS-price:hover,
+#BCC-price:hover,
+#BNB-price:hover,
+#LTC-price:hover,
+#XRP-price:hover {
+  color: #72A0C1;
+  font-size: 21pt;
+  transition: .1s;
+}
+
+
+
+#ETH:hover {
+  background-image:url("https://res.cloudinary.com/mokens/image/upload/v1535822435/teziuc3yt7yvorne9rc2.jpg");
+  background-size: 150px;
+  background-repeat: no-repeat;
+}
