@@ -1,7 +1,6 @@
-html * {
-  font-family: "Lucida Console", Monaco, monospace;
+html, h1, h2 * {
+  font-family: "BebasNeueRegular";
   font-size: 17px;
-  letter-spacing: -.7px;
   word-spacing: .4px;
   color: #000000;
   font-weight: 400;
@@ -24,9 +23,8 @@ html * {
 body {
   padding-top: 65px;
     margin: 0;
-    background: #D0E4F5 url("https://images4.alphacoders.com/888/888105.jpg") 
-    no-repeat center center fixed;
-    background-size: cover;
+    background: #E50914;
+    background-color: #E50914;
    }
   
   #map,
@@ -50,8 +48,8 @@ body {
     background: #144E75; }
 
   .navbar {
-    background-color: #144E75;
-    background: #1C6EA4;
+    background-color: #E50914;
+    background: #E50914;
     background: -moz-linear-gradient(left, #1C6EA4 0%, #000000 100%);
     background: -webkit-linear-gradient(left, #1C6EA4 0%, #000000 100%);
     background: linear-gradient(to right, #1C6EA4 0%, #000000 100%);
@@ -80,32 +78,6 @@ body {
   text-transform: none;
   text-align: center;
 }
-    .card-body {
-        background-image: url("https://images4.alphacoders.com/888/888105.jpg");
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        transition: 1s ease-out;
-    }
-      .card-body:hover{
-        background-image: url("https://yt3.ggpht.com/a/AGF-l79StRyDW9A-TohGZhSpmio2pwh8zQX-d5HNOQ=s900-mo-c-c0xffffffff-rj-k-no");
-        
-      }
-
-    .card-title {
-      font-size:30px;
-      color: rgb(255, 255, 255);
-    }
-      .card-title:hover{
-        color: rgb(158, 166, 238);
-      }
-
-    .card-text {
-      color: rgb(211, 229, 241);
-    }
-      .card-text:hover {
-        color: rgb(124, 124, 124);
-      }
 
 #linePlot{
         background-image: url("https://images4.alphacoders.com/888/888105.jpg");
@@ -133,37 +105,11 @@ body {
     text-decoration-color: #144E75;
   }
 
-.HOLDER {
-   background: black;
-}
-
-.fab {
-  color: rgb(255, 255, 255);
-  font-size: 28px;
-  transition: transform 0.2s;
-}
-
-.fab:hover {
-  transform: scale(1.2);
-}
-
-.fa-bars {
-  color: #ffffff;
-}
 
 .footer-link:hover {
   text-decoration: none !important;
 }
 
-.history-link {
-  font-family: 'Poppins', sans-serif;
-  font-size: 16px;
-  color: #144E75;
-}
-
-.history-link:hover {
-  text-decoration: none !important;
-  color: #72A0C1;
 }
 .footer-text {
   display: inline-block;
@@ -195,32 +141,29 @@ body {
   color: #72A0C1 !important;
 }
 
-#ETH-price,
-#EOS-price,
-#BCC-price,
-#BNB-price,
-#LTC-price,
-#XRP-price {
-  color: rgb(198, 219, 233);
-  font-size: 20pt;
-  transition: .1s;
+
+
+.typewriter {
+  color: #fff;
+  font-family: monospace;
+  overflow: hidden; /* Ensures the content is not revealed until the animation */
+  border-right: .15em solid orange; /* The typwriter cursor */
+  white-space: nowrap; /* Keeps the content on a single line */
+  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+  letter-spacing: .15em; /* Adjust as needed */
+  animation: 
+    typing 3.5s steps(30, end),
+    blink-caret .5s step-end infinite;
 }
 
-#ETH-price:hover,
-#EOS-price:hover,
-#BCC-price:hover,
-#BNB-price:hover,
-#LTC-price:hover,
-#XRP-price:hover {
-  color: #72A0C1;
-  font-size: 21pt;
-  transition: .1s;
+/* The typing effect */
+@keyframes typing {
+  from { width: 0 }
+  to { width: 100% }
 }
 
-
-
-#ETH:hover {
-  background-image:url("https://res.cloudinary.com/mokens/image/upload/v1535822435/teziuc3yt7yvorne9rc2.jpg");
-  background-size: 150px;
-  background-repeat: no-repeat;
+/* The typewriter cursor effect */
+@keyframes blink-caret {
+  from, to { border-color: transparent }
+  50% { border-color: orange }
 }

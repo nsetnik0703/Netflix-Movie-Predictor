@@ -1,13 +1,11 @@
 from flask import (
     Flask, 
-    jsonify, 
-    render_template, 
-    request, 
-    redirect)
+    jsonify,
+    render_template)
 import json
 import pandas as pd 
 
-app = Flask(__name__, template_folder="templates")
+app = Flask(__name__)
 
 @app.route("/")
 def index():
