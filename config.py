@@ -1,1 +1,0 @@
-gkey = "your api key"
