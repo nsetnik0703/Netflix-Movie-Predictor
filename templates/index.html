@@ -53,6 +53,8 @@
   
 <!-- <script src="static/js/liveplots.js"></script> -->
 
+<br>
+<br>
 <div class="container">
   <div class="row">
     <div class="col-md-2">
@@ -60,15 +62,43 @@
     
     <!-- scatter plot -->
     <div class="col-md-8">
-      <div id="plot"></div>
+        <center><h3>Does Youtube trailers affect Movie Performance?</h3></center>
+      <p style="color: #000000; text-align: center;">Select Year: <select id="selDataset" onchange="optionChanged(this.value)"></select></p>
+     
+      </div>
     </div>
     <div class="col-md-2">
     </div>
   </div>
 </div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
 
+<!-- plots -->
+<div class="container">
+    <div class="row">
+      <div class="col-md-3">
+          <div id="scatter1"></div>
+      </div>
+      <div class="col-md-3">
+        <div id="scatter2"></div>
+      </div>
+      <div class="col-md-3">
+          <div id="scatter3"></div>
+        </div>
+      <div class="col-md-3">
+          <br>
+          <br>
+          <br>
+          <h6><strong>Pearson's correlation</strong></h6>
+          <div id="r"></div>
+      </div>
+    </div>
+</div>
+
+<!-- d3/plotly -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
 <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+
+<!-- JS -->
 
 <script src="{{ url_for('static', filename='js/plot.js') }}"></script>
 
