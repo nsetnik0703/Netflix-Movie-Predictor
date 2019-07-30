@@ -1,169 +1,328 @@
-html, h1, h2 * {
-  font-family: "BebasNeueRegular";
-  font-size: 17px;
-  word-spacing: .4px;
-  color: #000000;
-  font-weight: 400;
-  text-decoration: none solid rgb(68, 68, 68);
-  font-style: normal;
-  font-variant: normal;
-  text-transform: none;
-}
+@media(min-width:468px){
 
-.selector {
-  background-image: linear-gradient(white, black);
-  background-size: cover;
-  background-position: center;
-  background-attachment: fixed;
+  html *{
+    font-family: "fantasy";
+    font-size: 18px;
+    word-spacing: .01px;
+    color: #000000;
+    font-weight: 400;
+    text-decoration: none solid rgb(68, 68, 68);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    cursor: default;
+  }
 
-  width: 100px;
-  height: 100px;
-}
+  h1, h2 {
+    font-size: 18px;
+    word-spacing: .01px;
+    color: #FFFFFF;
+    font-weight: 400;
+    text-decoration: none solid rgb(68, 68, 68);
+    font-style: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-align: center;
+  }
 
-body {
-  padding-top: 65px;
+  .selector {
+    background-image: linear-gradient(white, black);
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+
+    width: 100px;
+    height: 100px;
+  }
+
+  body {
+    padding-top: 65px;
+    padding-left: 250px;
+    padding-right: 250px;
     margin: 0;
-    background: #E50914;
-    background-color: #E50914;
-   }
-  
-  #map,
-  body,
-  html, header {
+    background-image: url("https://i2.wp.com/karunfreshgrocery.com/wp-content/uploads/2018/10/simple-gray-abstract-background-wi-1920x1080.jpg?ssl=1");
     height: 100%;
   }
 
-  p, h4, h6, small {
-    font-family: 'Poppins', sans-serif;
-    letter-spacing: 0px;
-  }
-  
-  .Button {
-    color: rgb(224, 192, 104); 
-    font-size: 25px; 
-    line-height: 25px; padding: 8px; border-radius: 10px; font-family: Georgia, serif; font-weight: normal; text-decoration: none; font-style: normal; font-variant: normal; text-transform: none; background-image: linear-gradient(to right, rgb(28, 110, 164) 0%, rgb(35, 136, 203) 50%, rgb(20, 78, 117) 100%); box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; border: 2px solid rgb(28, 110, 164); display: inline-block;}
-    .Button:hover {
-    background: #1C6EA4; }
-    .Button:active {
-    background: #144E75; }
+    p, h4, h6, small {
+      font-family: 'Poppins', sans-serif;
+      letter-spacing: 0px;
+    }
+    
+    .Button {
+      font-size: 25px; 
+      line-height: 25px;
+      padding: 8px;
+      border-radius: 10px;
+      font-family: Georgia, serif;
+      font-weight: normal;
+      text-decoration: none;
+      font-style: normal;
+      font-variant: normal;
+      text-transform: none;
+      background-image: linear-gradient(to right, rgb(71, 95, 95) 0%, darkgray 50%, lightgray 100%);
+      box-shadow: rgb(0, 0, 0) 5px 5px 15px 5px; border: 2px solid rgb(28, 110, 164);
+      display: inline-block;
+      cursor: pointer;
+      transition: all 0.5s;
+    }
+      .Button span {
+        cursor: pointer;
+        display: inline-block;
+        position: relative;
+        transition: 0.5s;
+      }
+      
+      .Button span:after {
+        content: '\00bb';
+        position: absolute;
+        opacity: 0;
+        top: 0;
+        right: -20px;
+        transition: 0.5s;
+      }
+      
+      .Button:hover span {
+        padding-right: 25px;
+      }
+      
+      .Button:hover span:after {
+        opacity: 1;
+        right: 0;
+      }
+          
+          .Button:hover {
+            background-image: linear-gradient(to right, rgb(43, 97, 110) 0%, darkgray 50%, lightgray 100%);
+            zoom: 2;
+          }
+          .Button:active {
+            background-image: linear-gradient(to right, rgb(43, 97, 110) 0%, lightgray 50%, white 100%);
+            animation: 
+              shift 1s;
+          }
 
-  .navbar {
-    background-color: #E50914;
-    background: #E50914;
-    background: -moz-linear-gradient(left, #1C6EA4 0%, #000000 100%);
-    background: -webkit-linear-gradient(left, #1C6EA4 0%, #000000 100%);
-    background: linear-gradient(to right, #1C6EA4 0%, #000000 100%);
-  }
+          @keyframes shift {
+            0% {};
+            100% {translate: right 10px};
+          }
 
- #color1 {
-    background-color: #144E75;
-}
-#color2 {
-  background-color: #FFEC8B;
-}
-#color3 {
-  background-color: #72A0C1;
-}
-#color4 {
-  background-color: #000000;
-}
-#timestamp {
-  font-family: "Lucida Console", Monaco, monospace;
-  font-size: 17px;
-  letter-spacing: 0px;
-  word-spacing: 0.2px;
-  color: lightgray;
-  font-weight: 700;
-  font-variant: normal;
-  text-transform: none;
-  text-align: center;
-}
+    .navbar {
+      transform: translate();
+      transition: 1s ease-in;
+    }
 
-#linePlot{
-        background-image: url("https://images4.alphacoders.com/888/888105.jpg");
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
-        transition: 1s ease-out;
-}
-
-#footnote{
-  font-family: "Lucida Console", Monaco, monospace;
-  font-size: 16px;
-  letter-spacing: 0px;
-  word-spacing: 0.2px;
-  color: lightgray;
-  font-weight: 700;
-  font-style: italic;
-  font-variant: normal;
-  text-transform: none;
-  transition: .1s;
-}
-  #footnote:hover{
-    color: #72A0C1;
+  #timestamp {
+    font-family: "Lucida Console", Monaco, monospace;
     font-size: 17px;
-    text-decoration-color: #144E75;
+    letter-spacing: 0px;
+    word-spacing: 0.2px;
+    color: lightgray;
+    font-weight: 700;
+    font-variant: normal;
+    text-transform: none;
+    text-align: center;
+  }
+
+  #linePlot{
+          background-image: url("https://images4.alphacoders.com/888/888105.jpg");
+          background-size: cover;
+          background-position: center;
+          background-attachment: fixed;
+          transition: 1s ease-out;
+  }
+
+  #footnote{
+    font-family: "Lucida Console", Monaco, monospace;
+    font-size: 16px;
+    letter-spacing: 0px;
+    word-spacing: 0.2px;
+    color: lightgray;
+    font-weight: 700;
+    font-style: italic;
+    font-variant: normal;
+    text-transform: none;
+    transition: .1s;
+  }
+    #footnote:hover{
+      color: #72A0C1;
+      font-size: 17px;
+      text-decoration-color: #144E75;
+    }
+
+
+  .footer-link:hover {
+    text-decoration: none !important;
+  }
+
+  .footer-text {
+    display: inline-block;
+    color: #ffffff;
+    font-size: 16px;
+    font-family: 'Poppins', sans-serif;
+  }
+
+  .nav-link {
+    color: #ffffff !important;
+    padding-top: 5px;
+    padding-bottom: 2px;
+  }
+
+  .nav-link:hover {
+    color: #72A0C1 !important;
+  }
+
+  .navbar-toggler-icon {
+    color: white !important;
+  }
+
+  .navbar-brand {
+    color: #ffffff;
+
+  }
+
+  .navbar-brand:hover {
+    color: #72A0C1 !important;
   }
 
 
-.footer-link:hover {
-  text-decoration: none !important;
-}
 
-}
-.footer-text {
-  display: inline-block;
-  color: #ffffff;
-  font-size: 16px;
-  font-family: 'Poppins', sans-serif;
-}
+  .typewriter {
+    color: #fff;
+    overflow: hidden; /* Ensures the content is not revealed until the animation */
+    border-right: .15em red; /* The typwriter cursor */
+    white-space: nowrap; /* Keeps the content on a single line */
+    margin: 0 auto; /* Gives that scrolling effect as the typing happens */
+    letter-spacing: 0.em; /* Adjust as needed */
+    animation: 
+      typing 4s steps(30, end),
+      blink-caret .5s step-end infinite,
+      fade-in 3s;
+  }
 
-.nav-link {
-  color: #ffffff !important;
-  padding-top: 5px;
-  padding-bottom: 2px;
-}
+  /* The typing effect */
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
 
-.nav-link:hover {
-  color: #72A0C1 !important;
-}
+  /* The typewriter cursor effect */
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: red }
+  }
 
-.navbar-toggler-icon {
-  color: white !important;
-}
+  @keyframes fade-in {
+    0% {opacity: 0; }
+    100% {opacity: 1;}
+  }
 
-.navbar-brand {
-  color: #ffffff;
+  .container-1 {
+    display: grid;
+  }
 
-}
+  .container-2 {
+    background-image: url("https://image.freepik.com/free-vector/spot-light-background_1284-4685.jpg");
+    display:grid;
+    grid-template-columns:1fr 1fr 1fr 1fr;
+    grid-auto-rows:minmax(100px, auto);
+  }
+    .box-1 {
+      grid-column:1/5;
+      grid-row:1;
+    }
 
-.navbar-brand:hover {
-  color: #72A0C1 !important;
-}
+    .dropdown {
+      grid-column:1/3;
+      grid-row:2;
+      height: 50%;
+      width: stretch;
+      position: fixed;
+      z-index: 1;
+      top: 0;
+      left: 0;
+      background-color: #111;
+      overflow-x: hidden;
+      padding-top: 16px;
+    }
 
+      * {box-sizing: border-box}
 
+          /* Style the tab */
+          .tab {
+            float: left;
+            border: 1px solid #ccc;
+            background-color: #f1f1f1;
+            width: 30%;
+            height: 300px;
+          }
 
-.typewriter {
-  color: #fff;
-  font-family: monospace;
-  overflow: hidden; /* Ensures the content is not revealed until the animation */
-  border-right: .15em solid orange; /* The typwriter cursor */
-  white-space: nowrap; /* Keeps the content on a single line */
-  margin: 0 auto; /* Gives that scrolling effect as the typing happens */
-  letter-spacing: .15em; /* Adjust as needed */
-  animation: 
-    typing 3.5s steps(30, end),
-    blink-caret .5s step-end infinite;
-}
+          /* Style the buttons that are used to open the tab content */
+          .tab button {
+            display: block;
+            background-color: inherit;
+            color: black;
+            padding: 22px 16px;
+            width: 100%;
+            border: none;
+            outline: none;
+            text-align: left;
+            cursor: pointer;
+            transition: 0.3s;
+          }
 
-/* The typing effect */
-@keyframes typing {
-  from { width: 0 }
-  to { width: 100% }
-}
+          /* Change background color of buttons on hover */
+          .tab button:hover {
+            background-color: #ddd;
+          }
 
-/* The typewriter cursor effect */
-@keyframes blink-caret {
-  from, to { border-color: transparent }
-  50% { border-color: orange }
+          /* Create an active/current "tab button" class */
+          .tab button.active {
+            background-color: #ccc;
+          }
+
+          /* Style the tab content */
+          .tabcontent {
+            float: left;
+            padding: 0px 12px;
+            border: 1px solid #ccc;
+            width: 70%;
+            border-left: none;
+            height: 300px;
+          }
+
+    .text-2 {
+      
+    }
+    #Generate {
+      grid-column: 4;
+      grid-row:4;
+    }
+  
+  
+  .container-3 {
+    background-image: url("https://image.freepik.com/free-vector/spot-light-background_1284-4685.jpg");
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    grid-auto-rows:minmax(100px, auto);
+    grid-auto-columns:minmax(100px, auto);
+    grid-gap: 1em;
+  }
+
+    .graph-1 {
+      background-color: white;
+      max-width: 500px;
+      max-height: 500px;
+    }
+
+      #graph-1{
+        max-width: 500px;
+        max-height: 500px;
+      }
+
+    .graph-2 {
+      background-color: white;
+      max-width: 500px;
+      max-height: 500px;
+      grid-column: 2;
+    }
 }
