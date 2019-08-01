@@ -4,12 +4,13 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Box Office Analysis</title>
+    <title>Box Offic Analysis</title>
 
  <!-- Our CSS -->
  <link rel="stylesheet" type="text/css" href="static/css/style.css">
- <!--<link rel="stylesheet" type="text/css" href="static/css/card.css">-->
  
+<!-- FontAwesome -->
+<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
  <!-- Bootstrap -->
  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
@@ -21,8 +22,8 @@
 </head>
 <body>
     
-    <!-- navbar1 -->
-    <nav class="navbar navbar-expand-lg fixed-top">
+     <!-- navbar -->
+     <nav class="navbar navbar-expand-lg fixed-top">
       <div class="typewriter">
         <a class="navbar-brand" href="/">Box Office Analysis</a>
       </div>
@@ -32,73 +33,69 @@
         <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
         </div>
       </nav>
+
+
+    <div class="container-1">
+      <div class="typewriter">
+    <h1>Welcome to the Box Office Analysis landing page! 
+      <br>
+      This is a simple tool used to explore the correlation <br> 
+      between reception of Movie Trailers on YouTube <br>
+      to the movies actual box office success.<br>
+      Does Youtube trailers affect Movie Performance?
+    </h1>
+      </div>
+    </div>
     
-
-<div class="container-1">
-  <div class="typewriter">
-<h1>Welcome to the Box Office Analysis landing page! 
-  <br>
-  This is a simple tool used to explore the correlation <br> 
-  between reception of Movie Trailers on YouTube <br>
-   to the movies actual box office success.
-</h1>
-  </div>
-</div>
-
-<div class="container-2">
-  <div class=box-1>
-    <div class="typewriter">
-  <h2>Select a year.</h2>
+    <!-- scatter plot -->
+  <div class="button-container">
+    <div class="label">
+      <p>Select Year:
+      <select id="selDataset" onchange="optionChanged(this.value)"></select></p>
     </div>
-  </div>
-        <div class="tab">
-            <button class="Button" onclick="openYear(event, '2016')">2016</button>
-            <button class="Button" onclick="openYear(event, '2017')">2017</button>
-            <button class="Button" onclick="openYear(event, '2018')">2018</button>
-        </div>
-          
-        <div id="2016" class="tabcontent">
-          <h3>2016</h3>
-          <p>These are the 2016 movies.</p>
-          <p>Title</p>
-          <p>Title</p>
-          <p>Title</p>
-          <p>Title</p>
-        </div>
-        
-        <div id="2017" class="tabcontent">
-          <h3>2017</h3>
-          <p>These are the 2017 movies.</p>
-          <p>Title</p>
-          <p>Title</p>
-          <p>Title</p>
-          <p>Title</p>
-        </div>
-        
-        <div id="2018" class="tabcontent">
-          <h3>2018</h3>
-          <p>These are the 2018 movies.</p>
-          <p>Title</p>
-          <p>Title</p>
-          <p>Title</p>
-          <p>Title</p>
-        </div> 
-          <div id="Generate" class="Button"><span>Generate</span></div>
+    <div>
+          <button class="Button" onclick="openYear(event, '2016')">2016</button>
+    </div>
+    <div>
+          <button class="Button" onclick="openYear(event, '2017')">2017</button>
+    </div>
+    <div>
+          <button class="Button" onclick="openYear(event, '2018')">2018</button>
+      </div>
     </div>
 
+<!-- plots -->
 <div class="container-3">
-  <div class="graph-1">
-    <img id="graph-1" src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Buffer_titration_graph.svg/2000px-Buffer_titration_graph.svg.png">
-  </div>
-  <div class="graph-2">
-    <img href="">
-  </div>
-
+    <div class="row">
+      <div class="graph-1">
+          <div id="scatter1"></div>
+      </div>
+      <div class="graph-2">
+        <div id="scatter2"></div>
+      </div>
+      <div class="graph-3">
+          <div id="scatter3"></div>
+        </div>
+      <div class="col-md-3">
+          <br>
+          <br>
+          <br>
+        <div class="typewriter">
+          <h2 style="text-align:justify"><strong>Pearson's correlation</strong></h2>
+          <div id="r">
+          </div>
+        </div>
+      </div>
+    </div>
 </div>
 
+<!-- d3/plotly -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/5.5.0/d3.min.js"></script>
+<script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
 
-  
-<script src="static/js/liveplots.js"></script>
+<!-- JS -->
+
+<script src="{{ url_for('static', filename='js/plot.js') }}"></script>
 
 </body>
 </html>
