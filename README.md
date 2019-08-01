@@ -16,8 +16,8 @@ With our classification model, we built an app that allows users to interact wit
 - Flask app where a user 1) creates their own movie gross prediction using sliders 2) find regression analysis of our dataset (plotly)
 
 ## Resources 
-- [https://www.the-numbers.com/movie/budgets](Movie Budgets)
-- [https://developers.google.com/youtube/](Youtube API) 
+- [Movie Budgets](https://www.the-numbers.com/movie/budgets)
+- [Youtube API](https://developers.google.com/youtube/]) 
 
 ## Authors 
 Nick Setnik, Ying Li, Pamela Zhao, Neal Zhang
