@@ -1,5 +1,5 @@
 ## Movie Profit/Loss Predictor
-Exiting, new movies are widely popularized by their trailers posted on Youtube. Thus, Youtube metrices (e.g., likes, views, comments) may be important in gaining strategic insights about how well the movie performs in the box office. 
+Upcoming movies are widely popularized by their trailers posted on Youtube. Thus, Youtube metrices (e.g., likes, views, comments) may be important in gaining strategic insights about how well the movie performs in the box office. 
 
 We collected movie budget and gross by web scraping, used Youtube API to gather metrics for movies in 2016, 2017, & 2018, and combined these data (555 unique rows) that was used to train and test a classification-based machine learning model with ~70% accuracy. 
 
