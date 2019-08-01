@@ -58,6 +58,12 @@ function buildCharts(year) {
     /* data route */
     var url = `/released_year/${year}`
 
+    //clears contents of graphs
+
+    document.getElementById('scatter1').innerHTML = ""
+    document.getElementById('scatter2').innerHTML = ""
+    document.getElementById('scatter3').innerHTML = ""
+
     d3.select("#r").html('')
 
     d3.json(url).then(function(response) {
@@ -89,6 +95,7 @@ function buildCharts(year) {
             b: 100,
             t: 100,
           },
+        width: 400
     };
 
     var trace2 = {
@@ -107,9 +114,10 @@ function buildCharts(year) {
         margin: {
             l: 20,
             r: 20,
-            b: 100,
-            t: 100,
+            b: 0,
+            t: 0,
           },
+        width: 400
     };
 
     var trace3 = {
@@ -131,7 +139,14 @@ function buildCharts(year) {
             b: 100,
             t: 100,
           },
+          width: 400
+
     };
+
+    console.log(layout1.margin.r)
+    console.log(layout1.margin.b)
+    console.log(layout1.margin.t)
+    console.log(layout1.margin.l)
 
     Plotly.newPlot("scatter1", data1, layout1);
     Plotly.newPlot("scatter2", data2, layout2);
