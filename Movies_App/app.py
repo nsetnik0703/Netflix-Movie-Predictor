@@ -3,12 +3,30 @@ from flask_material import Material
 import simplejson as json
 import pandas as pd 
 import numpy as np 
-from sklearn.externals import joblib
+from sklearn.externals.joblib import dump, load
+import tensorflow as tf
+from flask import Flask, request, jsonify
+import keras
+from keras import backend as K
+import tensorflow as tf
+from sklearn.preprocessing import StandardScaler,MinMaxScaler
 
 
 
 app = Flask(__name__, template_folder="templates")
 Material(app)
+
+model = None
+graph = None
+
+
+def load_model():
+    global model
+    global graph
+    model = tf.keras.models.load_model("../movie_model_trained.h5")
+    graph  = tf.get_default_graph()
+
+load_model()
 
 file = "Data/movies.csv"
 df = pd.read_csv(file)
@@ -41,40 +59,42 @@ def select_year():
 
 @app.route('/analyze', methods=['POST','GET'])
 def analyze():
-    
+    dd = {"success": False}
+
     if request.method == 'POST':
-        input_budget = request.form["budget"]
-        input_comment = request.form["comment"]
-        input_view = request.form["view"]
-        input_like = request.form["like"]
+        input_budget = int(request.form["budget"])
+        input_comment = int(request.form["comment"])
+        input_view = float(request.form["view"])
+        input_like = int(request.form["like"])
+        input_likep=input_like/input_view
+        input_commentp=input_comment/input_view
 
-        Budget = int(request.form["budget"])*1000000
-        Comment = int(request.form["comment"])*1000000
-        View = int(request.form["view"])*1000
-        Like = int(request.form["like"])*1000
-        Likep= Like/View
-        Commentp=Comment/View
-        # data=[]
-        # data.append(Budget)
-        # data.append(Comment)
-        # data.append(View)
-        # data.append(Like)
-        # data.append(Likep)
-        # data.append(Commentp)
-        # sc=load('std_scaler.bin')
+        # Budget = int(request.form["budget"])*1000000
+        # Comment = int(request.form["comment"])*1000000
+        # View = int(request.form["view"])*1000
+        # Like = int(request.form["like"])*1000
+        # Likep= Like/View
+        # Commentp=Comment/View
+        data=[]
+        data.append(input_budget*1000000)
+        data.append(input_comment*1000000)
+        data.append(input_view*1000)
+        data.append(input_like*1000)
+        data.append(input_likep)
+        data.append(input_commentp)
+        sc=load('../std_scaler.bin')
 
-        # with graph.as_default():
-        #     with tf.Session() as sess:
-        #         sess.run(tf.global_variables_initializer())
-        #         sess.run(tf.tables_initializer())
-        #         a = model.predict_classes(sc.transform(np.array(data).reshape(-1,1).T))
-        #         print(a)
-        #     dd["prediction"] = str(a[0])
-        #     dd["success"] = True
+        with graph.as_default():
+            with tf.Session() as sess:
+                sess.run(tf.global_variables_initializer())
+                sess.run(tf.tables_initializer())
+                a = model.predict_classes(sc.transform(np.array(data).reshape(-1,1).T))
+                print(a)
+            dd["prediction"] = str(a[0])
+            predict=str(a[0])
+            dd["success"] = True
 
-        #     return jsonify(dd)
-
-    return render_template('index.html', input_budget=input_budget, input_comment=input_comment, input_view=input_view, input_like=input_like)
+    return render_template('index.html', input_budget=input_budget, input_comment=input_comment, input_view=input_view, input_like=input_like, predict=predict)
 
 
 if __name__ == '__main__':

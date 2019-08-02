@@ -9,6 +9,7 @@
             <h5>Supervised Machine Learning</h5>
             <p>by Ying Li, Neal, Nick Setnik, and Pam Zhao</p>
             <br>
+            
             <a href="{{url_for('index')}}" class="btn btn-small waves-effect waves-dark">Reset</a>
             <a href="{{url_for('movies_api')}}" class="btn btn-small white black-text waves-effect waves-dark">Movies API</a>
         </div>
@@ -22,22 +23,22 @@
                     <form action="{{url_for('analyze')}}" method="POST" >
                 
                         <div class="range-field">
-                            <input type="range" min="0" max="900" step="10" value="0" name="budget">
+                            <input type="range" min="0" max="500" step="1" value="0" name="budget">
                             <label>Budget (million)</label>
                         </div>
             
                         <div class="range-field">
-                            <input type="range" min="0" max="500" step="10" value="0" name="view">
+                            <input type="range" min="0" max="150" step="0.01" value="0" name="view">
                             <label>Trailer Youtube Views (million)</label>
                         </div>
             
                         <div class="range-field">
-                            <input type="range" min="0" max="900" step="10" value="0" name="like">
+                            <input type="range" min="0" max="900" step="1" value="0" name="like">
                             <label>Trailer Youtube Likes (k)</label>
                         </div>
             
                         <div class="range-field">
-                            <input type="range" min="0" max="500" step="10" value="0" name="comment">
+                            <input type="range" min="0" max="5000" step="1" value="0" name="comment">
                             <label>Trailer Youtube Comments (k)</label>
                         </div>
                         <br>
@@ -57,11 +58,18 @@
                 </div>
             </div>
 
-            <div class="col col-4">
-                <h5>Prediction</h5>
-                <!-- Result of the prediction here -->
+                <div class="col col-4">
+                <h5>Prediction: {{predict}}</h5>
 
+                <div>
+                    {% if predict=="1" %}
+                    <p>Profitable</p>
+                    {% else %}
+                    <p>Not Profitable</p>
+                    {% endif %}
+                <!-- Result of the prediction here -->
             </div>
+
         </div>
     </div>
 </section>
