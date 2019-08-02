@@ -7,7 +7,7 @@ import numpy as np
 from flask import Flask, request, jsonify
 import keras
 from keras import backend as K
-import tensorflow as tf
+import tensorflow.compat.v1 as tf
 from sklearn.externals.joblib import dump, load
 from sklearn.preprocessing import StandardScaler,MinMaxScaler
 
@@ -15,7 +15,6 @@ from sklearn.preprocessing import StandardScaler,MinMaxScaler
 app = Flask(__name__)
 model = None
 graph = None
-
 
 
 app.config['UPLOAD_FOLDER'] = 'uploads'
@@ -59,11 +58,14 @@ def my_form_post():
             with tf.Session() as sess:
                 sess.run(tf.global_variables_initializer())
                 sess.run(tf.tables_initializer())
+                a=[]
                 a = model.predict_classes(sc.transform(np.array(data).reshape(-1,1).T))
                 print(a)
+               
+
             dd["prediction"] = str(a[0])
             dd["success"] = True
-
+            data=[]
             return jsonify(dd)
     return '''
     <!doctype html>
