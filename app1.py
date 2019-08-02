@@ -1,13 +1,7 @@
-# Example adapted from http://flask.pocoo.org/docs/0.12/patterns/fileuploads/
-# @NOTE: The code below is for educational purposes only.
-# Consider using the more secure version at the link above for production apps
-import pandas as pd
-import numpy as np
+
 from sklearn.externals.joblib import dump, load
 import pandas as pd
-import warnings
 import tensorflow as tf
-warnings.simplefilter('ignore')
 from flask import Flask, request
 import numpy as np
 from flask import Flask, request, jsonify
@@ -22,9 +16,6 @@ app = Flask(__name__)
 model = None
 graph = None
 
-
-# Loading a keras model with flask
-# https://blog.keras.io/building-a-simple-keras-deep-learning-rest-api.html
 
 
 app.config['UPLOAD_FOLDER'] = 'uploads'
@@ -86,6 +77,8 @@ def my_form_post():
 
 
     <input type="submit">
+    <input type="reset" value="REFRESH">
+
 </form>
     '''
 
