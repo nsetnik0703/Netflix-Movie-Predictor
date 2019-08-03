@@ -20,12 +20,12 @@ graph = None
 def load_model():
     global model
     global graph
-    model = tf.keras.models.load_model("Data/movie_model_trained.h5")
+    model = tf.keras.models.load_model("data/movie_model_trained.h5")
     graph  = tf.get_default_graph()
 
 load_model()
 
-file = "Data/movies.csv"
+file = "data/movies.csv"
 df = pd.read_csv(file)
 
 years = {
@@ -73,19 +73,22 @@ def analyze():
         data.append(input_like*1000)
         data.append(input_likep)
         data.append(input_commentp)
-        sc=load('Data/std_scaler.bin')
+        sc=load('data/std_scaler.bin')
 
         with graph.as_default():
             with tf.Session() as sess:
                 sess.run(tf.global_variables_initializer())
                 sess.run(tf.tables_initializer())
                 a = model.predict_classes(sc.transform(np.array(data).reshape(-1,1).T))
+                bb = model.predict(sc.transform(np.array(data).reshape(-1,1).T))
                 print(a)
             dd["prediction"] = str(a[0])
             predict=str(a[0])
             dd["success"] = True
+            z=str(bb[0][0])
+            y=str(bb[0][1])
 
-    return render_template('index.html', input_budget=input_budget, input_comment=input_comment, input_view=input_view, input_like=input_like, predict=predict)
+    return render_template('index.html', input_budget=input_budget, input_comment=input_comment, input_view=input_view, input_like=input_like, predict=predict, z=z, y=y)
 
 
 if __name__ == '__main__':
