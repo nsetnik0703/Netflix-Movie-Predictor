@@ -1,5 +1,7 @@
 <img src="https://github.com/nsetnik0703/bettr-profit/blob/master/static/images/REMEBanner.png?raw=true"> 
 
+<img src="https://github.com/nsetnik0703/bettr-profit/blob/master/static/images/REMEBanner2.png?raw=true"> 
+
 ## Better Profit 
 Upcoming movies are widely popularized by their trailers posted on Youtube. Thus, Youtube metrices (e.g., likes, views, comments) may be important in gaining strategic insights about how well the movie performs in the box office. 
 
