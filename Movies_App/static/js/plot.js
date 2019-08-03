@@ -170,7 +170,10 @@ function init() {
 };
 
 function optionChanged(updatedyear) {
-     buildCharts(updatedyear);
+    d3.select("#r1").select("h6").remove();
+    d3.select("#r2").select("h6").remove();
+    d3.select("#r3").select("h6").remove();
+    buildCharts(updatedyear);
 };
 
 init();
