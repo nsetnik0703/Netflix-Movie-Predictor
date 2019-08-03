@@ -2,7 +2,7 @@
  *  Source: http://stevegardner.net/2012/06/11/javascript-code-to-calculate-the-pearson-correlation-coefficient/
  */
 
-function getPearsonCorrelation(x, y) {
+function getPearsonCorrelation(x, y, id) {
     var shortestArrayLength = 0;
      
     if(x.length == y.length) {
@@ -47,10 +47,10 @@ function getPearsonCorrelation(x, y) {
   
     console.log(answer);
     
-    d3.select("#r")
+    d3.select("#"+id)
     .append("h6")
     .append("text")
-    .text(answer);
+    .text("r = " + answer);
 
 };
 
@@ -58,7 +58,7 @@ function buildCharts(year) {
     /* data route */
     var url = `/released_year/${year}`
 
-    d3.select("#r").html('')
+    // d3.select("#r").html('')
 
     d3.json(url).then(function(response) {
 
@@ -137,9 +137,10 @@ function buildCharts(year) {
     Plotly.newPlot("scatter2", data2, layout2);
     Plotly.newPlot("scatter3", data3, layout3);
 
-    getPearsonCorrelation(like_count, gross);
-    getPearsonCorrelation(view_count, gross);
-    getPearsonCorrelation(comment_count, gross);
+    getPearsonCorrelation(like_count, gross, 'r1');
+    getPearsonCorrelation(view_count, gross, 'r2');
+    getPearsonCorrelation(comment_count, gross, 'r3');
+
     });
 };
 
@@ -147,20 +148,23 @@ function init() {
 
     // grab a reference to the dropdown select element
     var selector = d3.select("#selDataset");
-    console.log(selector)
+    console.log("This is selector: " + selector)
     // use the list of sample names to populate the select options
     d3.json("/select_year").then((all_years) => {
-        console.log(all_years);
+        
         all_years.forEach((year) => {
             selector
             .append("option")
             .text(year)
             .property("value", year);
+            console.log("Year: " + year);
         });
 
-    // build default plot
-    const defaultyear = all_years[0];
-    buildCharts(defaultyear);
+        console.log("all_years: " + all_years);
+        // build default plot
+        const defaultyear = all_years[0];
+        console.log("This is default year: " + defaultyear)
+        buildCharts(defaultyear);
 
     });
 };

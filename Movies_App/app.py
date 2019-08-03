@@ -4,8 +4,6 @@ import simplejson as json
 import pandas as pd 
 import numpy as np 
 from sklearn.externals.joblib import dump, load
-import tensorflow as tf
-from flask import Flask, request, jsonify
 import keras
 from keras import backend as K
 import tensorflow as tf
@@ -19,11 +17,10 @@ Material(app)
 model = None
 graph = None
 
-
 def load_model():
     global model
     global graph
-    model = tf.keras.models.load_model("../movie_model_trained.h5")
+    model = tf.keras.models.load_model("Data/movie_model_trained.h5")
     graph  = tf.get_default_graph()
 
 load_model()
@@ -69,12 +66,6 @@ def analyze():
         input_likep=input_like/input_view
         input_commentp=input_comment/input_view
 
-        # Budget = int(request.form["budget"])*1000000
-        # Comment = int(request.form["comment"])*1000000
-        # View = int(request.form["view"])*1000
-        # Like = int(request.form["like"])*1000
-        # Likep= Like/View
-        # Commentp=Comment/View
         data=[]
         data.append(input_budget*1000000)
         data.append(input_comment*1000000)
@@ -82,7 +73,7 @@ def analyze():
         data.append(input_like*1000)
         data.append(input_likep)
         data.append(input_commentp)
-        sc=load('../std_scaler.bin')
+        sc=load('Data/std_scaler.bin')
 
         with graph.as_default():
             with tf.Session() as sess:
