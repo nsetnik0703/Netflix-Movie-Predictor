@@ -3,14 +3,18 @@
 <img src="https://github.com/nsetnik0703/bettr-profit/blob/master/static/images/REMEBanner2.png?raw=true"> 
 
 ## Better Profit 
-Upcoming movies are widely popularized by their trailers posted on Youtube. Thus, Youtube metrices (e.g., likes, views, comments) may be important in gaining strategic insights about how well the movie performs in the box office. 
+Upcoming movies are widely popularized by their trailers posted on Youtube. Thus, Youtube metrices (e.g., likes, views, comments) may be important in gaining strategic insights about how well the movie performs in the US box office. 
 
 We collected movie budget and gross by web scraping, used Youtube API to gather metrics for movies in 2016, 2017, & 2018, and combined these data (555 unique rows) that was used to train and test a classification-based machine learning model with ~70% accuracy. 
 
 With our classification model, we built an app that allows users to interact with specific parameters (budget, Youtube likes, etc) to generate the prediction of the movie as well as observing our dataset with interactive correlation graphs and regression analysis. 
 
+The prediction output is based on the probability where "not profitable" means the movie budget exceeds its gross and "profitable" means the movie budget is less than its gross. 
+
+Enjoy! 
+
 ## App 
-- [Live App](http://bettr-profit.herokuapp.com/)
+- Check out our live app here: [Live App](http://bettr-profit.herokuapp.com/)
 
 ## Workflow
 - Web scraping using BeautifulSoup to collect movie budget and gross 
